@@ -83,6 +83,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="tagButton" destination="b3I-ks-0mn" id="Ey4-yu-EQj"/>
                         <outlet property="tagIndicatorWidthConstraint" destination="CHP-b8-FYJ" id="0q1-cp-3ET"/>
                     </connections>
                 </viewController>

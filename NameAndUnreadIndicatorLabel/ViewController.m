@@ -12,6 +12,7 @@
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *tagIndicatorWidthConstraint
 ;
+@property (weak, nonatomic) IBOutlet UIButton *tagButton;
 @end
 
 @implementation ViewController
@@ -21,6 +22,7 @@
     [super viewDidLoad];
 
     self.tagIndicatorWidthConstraint.constant = 0;
+    [self.tagButton setTitle:@"Tag" forState:UIControlStateNormal];
 }
 
 
@@ -33,11 +35,20 @@
 
 - (IBAction)shrinkAction:(id)sender
 {
-    self.tagIndicatorWidthConstraint.constant = self.tagIndicatorWidthConstraint.constant ? 0 : 16.0;
+    if (self.tagIndicatorWidthConstraint.constant) {
+        self.tagIndicatorWidthConstraint.constant = 0.0;
+        [self.tagButton setTitle:@"Tag" forState:UIControlStateNormal];
+    }
+    else {
+        self.tagIndicatorWidthConstraint.constant = 16.0;
+        [self.tagButton setTitle:@"Untag" forState:UIControlStateNormal];
+    }
 
+#if 0
     [UIView animateWithDuration:2.0 animations:^{
         [self.view layoutIfNeeded];
     }];
+#endif
 }
 
 @end
