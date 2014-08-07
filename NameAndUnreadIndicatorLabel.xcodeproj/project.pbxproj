@@ -456,6 +456,7 @@
 				0495E6221992D266003DC9BB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0495E6231992D266003DC9BB /* Build configuration list for PBXNativeTarget "NameAndUnreadIndicatorLabelTests" */ = {
 			isa = XCConfigurationList;
@@ -464,6 +465,7 @@
 				0495E6251992D266003DC9BB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

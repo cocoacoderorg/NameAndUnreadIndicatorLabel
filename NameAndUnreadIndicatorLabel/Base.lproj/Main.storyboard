@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5023" systemVersion="13A603" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6205" systemVersion="13F7" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6198"/>
     </dependencies>
     <scenes>
-        <!--class Prefix:identifier View Controller-->
+        <!--View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
                 <viewController id="vXZ-lx-hvc" customClass="ViewController" sceneMemberID="viewController">
@@ -15,16 +15,91 @@
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pCb-pI-ykt">
+                                <rect key="frame" x="100" y="216" width="120" height="136"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ShowImage" translatesAutoresizingMaskIntoConstraints="NO" id="MTu-ai-uVT" userLabel="ShowImageView">
+                                        <rect key="frame" x="0.0" y="0.0" width="120" height="120"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="120" id="AiK-uO-6zb"/>
+                                        </constraints>
+                                    </imageView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aOp-EA-md8">
+                                        <rect key="frame" x="0.0" y="120" width="120" height="16"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    </view>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="16" placeholderIntrinsicHeight="16" image="thread-unread" translatesAutoresizingMaskIntoConstraints="NO" id="HNF-zL-ZRj" userLabel="TagImageView">
+                                        <rect key="frame" x="0.0" y="120" width="16" height="16"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" priority="800" constant="16" id="CHP-b8-FYJ"/>
+                                            <constraint firstAttribute="height" constant="16" id="YmJ-cC-wwi"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wild" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oh8-hl-3IH" userLabel="ImageLabel">
+                                        <rect key="frame" x="16" y="120" width="104" height="16"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="Oh8-hl-3IH" secondAttribute="trailing" id="16o-j5-2zi"/>
+                                    <constraint firstItem="HNF-zL-ZRj" firstAttribute="top" secondItem="MTu-ai-uVT" secondAttribute="bottom" id="6dO-aD-Py4"/>
+                                    <constraint firstAttribute="trailing" secondItem="MTu-ai-uVT" secondAttribute="trailing" id="9hw-pN-uTt"/>
+                                    <constraint firstAttribute="bottom" secondItem="Oh8-hl-3IH" secondAttribute="bottom" id="Eaa-M3-wqD"/>
+                                    <constraint firstItem="aOp-EA-md8" firstAttribute="leading" secondItem="pCb-pI-ykt" secondAttribute="leading" id="KHg-Y1-wPP"/>
+                                    <constraint firstAttribute="bottom" secondItem="aOp-EA-md8" secondAttribute="bottom" id="P8u-W2-1yE"/>
+                                    <constraint firstItem="Oh8-hl-3IH" firstAttribute="top" secondItem="MTu-ai-uVT" secondAttribute="bottom" id="R63-by-n59"/>
+                                    <constraint firstAttribute="height" constant="136" id="RT7-Hv-brD"/>
+                                    <constraint firstItem="Oh8-hl-3IH" firstAttribute="leading" secondItem="HNF-zL-ZRj" secondAttribute="trailing" id="U5A-PW-1mY"/>
+                                    <constraint firstItem="MTu-ai-uVT" firstAttribute="top" secondItem="pCb-pI-ykt" secondAttribute="top" id="bWi-BP-qnM"/>
+                                    <constraint firstItem="HNF-zL-ZRj" firstAttribute="leading" secondItem="pCb-pI-ykt" secondAttribute="leading" id="eRt-VI-Cwo"/>
+                                    <constraint firstAttribute="width" constant="120" id="g2m-va-ioK"/>
+                                    <constraint firstAttribute="trailing" secondItem="aOp-EA-md8" secondAttribute="trailing" id="kXz-zA-Kf4"/>
+                                    <constraint firstItem="MTu-ai-uVT" firstAttribute="leading" secondItem="pCb-pI-ykt" secondAttribute="leading" id="ksj-sz-YZk"/>
+                                    <constraint firstItem="aOp-EA-md8" firstAttribute="top" secondItem="MTu-ai-uVT" secondAttribute="bottom" id="yVa-RP-HIw"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b3I-ks-0mn" userLabel="TaggerButton">
+                                <rect key="frame" x="137" y="465" width="46" height="30"/>
+                                <state key="normal" title="Tag">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="shrinkAction:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="SGT-J9-jYf"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerY" secondItem="pCb-pI-ykt" secondAttribute="centerY" id="WDk-78-Z2B"/>
+                            <constraint firstAttribute="centerX" secondItem="pCb-pI-ykt" secondAttribute="centerX" id="qhd-Bx-0tH"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tagIndicatorWidthConstraint" destination="CHP-b8-FYJ" id="0q1-cp-3ET"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
         </scene>
     </scenes>
+    <resources>
+        <image name="ShowImage" width="120" height="120"/>
+        <image name="thread-unread" width="16" height="16"/>
+    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
-        <simulatedScreenMetrics key="destination" type="retina4"/>
+        <simulatedScreenMetrics key="destination" type="retina4">
+            <size key="portraitSize" width="320" height="568"/>
+            <size key="landscapeSize" width="568" height="320"/>
+        </simulatedScreenMetrics>
     </simulatedMetricsContainer>
 </document>

@@ -10,6 +10,8 @@
 
 @interface ViewController ()
 
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *tagIndicatorWidthConstraint
+;
 @end
 
 @implementation ViewController
@@ -17,13 +19,25 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+
+    self.tagIndicatorWidthConstraint.constant = 0;
 }
+
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+
+- (IBAction)shrinkAction:(id)sender
+{
+    self.tagIndicatorWidthConstraint.constant = self.tagIndicatorWidthConstraint.constant ? 0 : 16.0;
+
+    [UIView animateWithDuration:2.0 animations:^{
+        [self.view layoutIfNeeded];
+    }];
 }
 
 @end
