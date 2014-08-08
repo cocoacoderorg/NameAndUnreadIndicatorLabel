@@ -12,7 +12,9 @@
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *tagIndicatorWidthConstraint
 ;
+@property (weak, nonatomic) IBOutlet UIView *tagAreaView;
 @property (weak, nonatomic) IBOutlet UIButton *tagButton;
+@property (weak, nonatomic) IBOutlet UILabel *imageLabel;
 @end
 
 @implementation ViewController
@@ -35,20 +37,28 @@
 
 - (IBAction)shrinkAction:(id)sender
 {
-    if (self.tagIndicatorWidthConstraint.constant) {
-        self.tagIndicatorWidthConstraint.constant = 0.0;
-        [self.tagButton setTitle:@"Tag" forState:UIControlStateNormal];
+    CGFloat newWidth;
+    if (self.tagIndicatorWidthConstraint.constant == 16.0) {
+        newWidth = 1.0;
+        //[self.tagButton setTitle:@"Tag" forState:UIControlStateNormal];
     }
     else {
-        self.tagIndicatorWidthConstraint.constant = 16.0;
-        [self.tagButton setTitle:@"Untag" forState:UIControlStateNormal];
+        newWidth = 16.0;
+        //[self.tagButton setTitle:@"Untag" forState:UIControlStateNormal];
     }
+    BOOL rc = [self.tagAreaView hasAmbiguousLayout];
 
-#if 0
-    [UIView animateWithDuration:2.0 animations:^{
-        [self.view layoutIfNeeded];
+    //[self.tagAreaView layoutIfNeeded];
+    [UIView animateWithDuration:2.0 delay:0.0 options:UIViewAnimationOptionBeginFromCurrentState animations:^{
+        self.imageLabel.text = [self.imageLabel.text stringByAppendingString:@"!"];
+        [self.imageLabel setNeedsLayout];
+        [self.imageLabel layoutIfNeeded];
+        self.tagIndicatorWidthConstraint.constant = newWidth;
+        [self.tagAreaView setNeedsLayout];
+        [self.tagAreaView layoutIfNeeded];
+
+    } completion:^(BOOL finished) {
     }];
-#endif
 }
 
 @end
