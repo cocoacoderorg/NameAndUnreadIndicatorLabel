@@ -14,6 +14,7 @@
 ;
 @property (weak, nonatomic) IBOutlet UIView *tagAreaView;
 @property (weak, nonatomic) IBOutlet UIButton *tagButton;
+@property (weak, nonatomic) IBOutlet UILabel *imageLabel;
 @end
 
 @implementation ViewController
@@ -49,9 +50,13 @@
 
     //[self.tagAreaView layoutIfNeeded];
     [UIView animateWithDuration:2.0 delay:0.0 options:UIViewAnimationOptionBeginFromCurrentState animations:^{
+        self.imageLabel.text = [self.imageLabel.text stringByAppendingString:@"!"];
+        [self.imageLabel setNeedsLayout];
+        [self.imageLabel layoutIfNeeded];
         self.tagIndicatorWidthConstraint.constant = newWidth;
         [self.tagAreaView setNeedsLayout];
         [self.tagAreaView layoutIfNeeded];
+
     } completion:^(BOOL finished) {
     }];
 }
